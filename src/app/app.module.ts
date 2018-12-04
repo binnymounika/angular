@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from  '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
+
 import { AppComponent } from './app.component';
 import { GrandParentComponent } from './grand-parent/grand-parent.component';
 import { FatherComponent } from './father/father.component';
 import { MotherComponent } from './mother/mother.component';
 import { TaskManagerComponent } from './mini-app/task-manager/task-manager.component';
+import { NotFoundComponent } from './not-found/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,41 @@ import { TaskManagerComponent } from './mini-app/task-manager/task-manager.compo
     GrandParentComponent,
     FatherComponent,
     MotherComponent,
-    TaskManagerComponent
+    TaskManagerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    
+    FormsModule,
+  RouterModule.forRoot([
+    {
+       path:'task-manager',
+       component:TaskManagerComponent
+  }
+  ,
+   {
+       path:'grand-parent',
+       component:GrandParentComponent,
+       children:[
+         {
+           path:'father',
+           component:FatherComponent
+         },
+          {
+           path:'mother',
+           component:MotherComponent
+         }
+
+       ]
+  },
+   {
+       path:'**',
+       component:NotFoundComponent
+  }
+  ])
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
