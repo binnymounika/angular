@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskManagerComponent implements OnInit {
 counter=0
+salary=100
+myDate =new Date();
 oneTask="Add your Task..."
+myString="mouni"
 myTasks=['Go and get some mango lassi','plan the weekend','Identify some examples','some other task']
   constructor() { }
 comTasks=[]

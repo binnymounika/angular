@@ -6,7 +6,7 @@ Task:
 Pending:
 <ol>
   <li *ngFor="let t of myTasks;let currentTask=index">
-    {{t}}
+    {{t | lowercase}}
      
      <button (click)="taskDone(currentTask)">TaskDone</button>
      </li>
@@ -16,7 +16,9 @@ Completed:
 <ol>
   <li *ngFor="let t of comTasks">
     {{t}}
-     
-     
-   
 </ol>
+currency Pipe:{{salary | currency:'INR'}}
+<br>
+Date Pipe:{{ myDate | date:'MM/dd/yyyy' }}
+<br>
+String Sort Pipe:{{myString | stringSortPipe }}

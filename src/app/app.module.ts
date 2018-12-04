@@ -10,6 +10,7 @@ import { FatherComponent } from './father/father.component';
 import { MotherComponent } from './mother/mother.component';
 import { TaskManagerComponent } from './mini-app/task-manager/task-manager.component';
 import { NotFoundComponent } from './not-found/not-found/not-found.component';
+import { StringSortPipePipe } from './myPipes/string-sort-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found/not-found.component';
     FatherComponent,
     MotherComponent,
     TaskManagerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    StringSortPipePipe
   ],
   imports: [
     BrowserModule,
