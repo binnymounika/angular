@@ -1,6 +1,10 @@
 <p>
   users-apicomponent works!
 </p>
+Real Time Search:
+<input type="text" [(ngModel)]="searchString"> {{ serachString }}
+<br>
+<br>
 <table border="2">
   <thead>
     <tr>
@@ -11,11 +15,18 @@
       </tr>
       </thead>
 
-  <tr *ngFor="let user of allUsers">
+  <tr *ngFor="let user of allUsers | autoSearchPipe:searchString">
     <td>{{ user.id }}</td>
      <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
        <td>{{ user.address.geo.lat+ '' +user.address.geo.lng }}</td>
-       
+      <td>
+      <button (click)="deleteUser(user.id)">Delete</button>
+
+      </td> 
     </tr>
+    
 </table>
+<br>
+<br>
+<button (click)="postUser()">Create</button>

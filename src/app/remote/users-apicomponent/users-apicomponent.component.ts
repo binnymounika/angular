@@ -25,4 +25,34 @@ getAPIData()
   })
 
 }
+user={
+  "name":"mouni",
+  "email":"binnymounika",
+  "address":{
+    "geo":{
+          "lat":"88.88",
+          "lng":"34.34"
+    }
+  }
+}
+postUser()
+{
+   this.userService.createUser(this.user).subscribe((response) => {
+
+console.log(this.user)})
+ this.userService.getRemoteUsers().subscribe((response) =>{
+    this.allUsers = response
+ })
+}
+deleteUser(i)
+{
+  console.log(i)
+  
+   this.userService.delUser(i).subscribe((response) => {
+
+console.log(this.user)})
+ this.userService.getRemoteUsers().subscribe((response) =>{
+    this.allUsers = response
+ })
+}
 }
