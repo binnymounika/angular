@@ -10,7 +10,8 @@ counter=0
 salary=100
 myDate =new Date();
 oneTask="Add your Task..."
-myString="mouni"
+myString=["mouni","anitha","chinni"]
+score=[25,5,1,0,88,55,44]
 myTasks=['Go and get some mango lassi','plan the weekend','Identify some examples','some other task']
   constructor() { }
 comTasks=[]

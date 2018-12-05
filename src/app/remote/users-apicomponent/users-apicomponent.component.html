@@ -1,0 +1,21 @@
+<p>
+  users-apicomponent works!
+</p>
+<table border="2">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Co-ordinates</th>
+      </tr>
+      </thead>
+
+  <tr *ngFor="let user of allUsers">
+    <td>{{ user.id }}</td>
+     <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+       <td>{{ user.address.geo.lat+ '' +user.address.geo.lng }}</td>
+       
+    </tr>
+</table>

@@ -1,12 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'stringSortPipe'
+  name: 'numberSortPipe'
 })
-export class StringSortPipePipe implements PipeTransform {
-
+export class NumberSortPipePipe implements PipeTransform {
+sortNumbers = function(first,second)
+{
+  console.log(first-second)
+  return first-second
+}
   transform(value: any, args?: any): any {
-   if(args =='asc'){
+    {
+      if(args =='asc'){
     return value.sort();
   }
   else if(args =='dsc')
@@ -14,5 +19,7 @@ export class StringSortPipePipe implements PipeTransform {
       return value.sort().reverse();
   }
  return value.sort();
-}
+    }
+  }
+
 }

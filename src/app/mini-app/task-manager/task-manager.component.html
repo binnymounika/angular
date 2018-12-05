@@ -21,4 +21,6 @@ currency Pipe:{{salary | currency:'INR'}}
 <br>
 Date Pipe:{{ myDate | date:'MM/dd/yyyy' }}
 <br>
-String Sort Pipe:{{myString | stringSortPipe }}
+sorted friends:{{myString | stringSortPipe : "asc" }}
+<br>
+sorted score:{{ score | numberSortPipe : "dsc" }}
