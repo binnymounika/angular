@@ -1,5 +1,7 @@
+import { element } from 'protractor';
 import { RestAPIUsersServiceService } from './../../services/rest-apiusers-service.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-users-apicomponent',
@@ -9,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class UsersAPIComponentComponent implements OnInit {
 
 allUsers:any
-  constructor(private userService:RestAPIUsersServiceService) { }
+  constructor(private userService:RestAPIUsersServiceService,private router:Router) { }
 
   ngOnInit() {
     this.getAPIData()
@@ -54,5 +56,12 @@ console.log(this.user)})
  this.userService.getRemoteUsers().subscribe((response) =>{
     this.allUsers = response
  })
+}
+viewDetail(id)
+{
+  console.log(id)
+  //it will navigate to /remoteData/id
+  //element.g it will navigate to /remoteData/1
+  this.router.navigate(["/remotedata",id])
 }
 }
