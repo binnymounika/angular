@@ -14,6 +14,7 @@ import {trigger, state, transition, animate, style} from '@angular/animations';
 })
 export class AnimationComponent implements OnInit {
 defaultState:String ='kid'
+content:String="i grew up"
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +23,11 @@ defaultState:String ='kid'
 animateNow()
 {
   this.defaultState= this.defaultState == 'elder'?'kid' :'elder'
+  if(this.defaultState =='kid'){
+this.content="I wish to grow up"
+  }
+   
+   else  
+       this.content = "i grew up"
 }
 }
