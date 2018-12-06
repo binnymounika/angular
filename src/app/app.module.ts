@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from  '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import {RouterModule} from "@angular/router";
+import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { GrandParentComponent } from './grand-parent/grand-parent.component';
@@ -18,6 +20,8 @@ import { UsersAPIComponentComponent } from './remote/users-apicomponent/users-ap
 import { AutoSearchPipePipe } from './myPipes/auto-search-pipe.pipe';
 import { UserDetailComponent } from './remote/user-detail/user-detail.component';
 import { TemplateFormComponent } from './form/template-form/template-form.component';
+import { ModelFormComponent } from './form/model-form/model-form.component';
+import { AnimationComponent } from './animations/animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +38,17 @@ import { TemplateFormComponent } from './form/template-form/template-form.compon
     UsersAPIComponentComponent,
     AutoSearchPipePipe,
     UserDetailComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ModelFormComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   RouterModule.forRoot([
     {
        path:'task-manager',
@@ -83,11 +91,20 @@ import { TemplateFormComponent } from './form/template-form/template-form.compon
        path:'templateform',
       component:TemplateFormComponent
   },
+  {
+       path:'modelform',
+      component:ModelFormComponent
+  },
+  {
+       path:'animation',
+       component:AnimationComponent
+  },
+
    {
        path:'**',
        component:NotFoundComponent
   }
-
+  
   ])
 
 
